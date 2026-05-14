@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Liberation Room</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="room">
+    <section id="intro" class="card active">
+      <h1>Digital Liberation Room</h1>
+      <h2>Escape the Student Debt Cycle</h2>
+      <p>
+        You wake up inside the National Debt Recovery System™, a virtual holding room
+        built from tuition bills, loan statements, degree requirements, and impossible choices.
+      </p>
+      <p>
+        To free yourself, you must complete three challenges: demonstrate cultural competency,
+        identify where power resides, and advocate for someone made vulnerable by the system.
+      </p>
+      <button onclick="showSection('challenge1')">Enter the Room</button>
+    </section>
+
+    <section id="challenge1" class="card">
+      <h2>Challenge 1: Cultural Competency</h2>
+      <p>
+        Four students stand before a locked gate. Each borrowed money for school, but their circumstances are not equal.
+      </p>
+      <ul>
+        <li>A first-generation student supports family while attending classes.</li>
+        <li>A wealthy student has family help and no living expenses.</li>
+        <li>A disabled student needs accommodations and flexible pacing.</li>
+        <li>An undocumented student has limited access to financial aid.</li>
+      </ul>
+      <p><strong>Question:</strong> What does cultural competency require us to recognize?</p>
+
+      <button onclick="wrongAnswer()">Everyone has the same chance if they work hard.</button>
+      <button onclick="showSection('challenge2')">Debt affects people differently because systems do not treat everyone equally.</button>
+    </section>
+
+    <section id="challenge2" class="card">
+      <h2>Challenge 2: Where Power Resides</h2>
+      <p>
+        The next door is covered with logos: universities, lenders, employers, government agencies,
+        and loan servicers. A message flashes: “Who controls the terms of freedom?”
+      </p>
+      <p><strong>Question:</strong> Where does power reside in the student debt system?</p>
+
+      <button onclick="wrongAnswer()">Only with individual students making personal choices.</button>
+      <button onclick="showSection('challenge3')">In institutions that set costs, control loans, define credentials, and profit from debt.</button>
+    </section>
+
+    <section id="challenge3" class="card">
+      <h2>Challenge 3: Advocacy</h2>
+      <p>
+        A borrower beside you is about to default. They are overwhelmed, ashamed, and afraid to ask for help.
+        The system offers you one final choice.
+      </p>
+      <p><strong>Question:</strong> What action helps move toward liberation?</p>
+
+      <button onclick="wrongAnswer()">Tell them they should have chosen a cheaper path.</button>
+      <button onclick="wrongAnswer()">Ignore them and focus only on your own escape.</button>
+      <button onclick="showSection('ending')">Share resources, challenge the system, and advocate for more accessible paths to education.</button>
+    </section>
+
+    <section id="ending" class="card liberation">
+      <h2>You Are Not Free Until Everyone Is Free</h2>
+      <p>
+        The door opens, but liberation is not simply individual escape. True liberation means questioning
+        the systems that trap people, recognizing unequal burdens, and using knowledge to advocate for others.
+      </p>
+      <p>
+        Alternative paths to learning may include libraries, open education, apprenticeships, community programs,
+        mutual aid, and policies that make education less dependent on debt.
+      </p>
+      <h3>Room Complete</h3>
+    </section>
+
+    <p id="message"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
