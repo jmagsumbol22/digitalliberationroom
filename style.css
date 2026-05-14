@@ -1,23 +1,23 @@
 body {
   margin: 0;
-  font-family: Georgia, serif;
-  background: #111827;
-  color: #f9fafb;
+  font-family: "Courier New", monospace;
+  background: #000000;
+  color: #00ff66;
 }
 
 .room {
-  max-width: 850px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
 .card {
   display: none;
-  background: #1f2937;
-  border: 2px solid #6b7280;
-  border-radius: 18px;
+  background: rgba(0, 20, 0, 0.92);
+  border: 2px solid #00ff66;
+  border-radius: 8px;
   padding: 30px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 25px #00ff66;
 }
 
 .card.active {
@@ -26,11 +26,15 @@ body {
 
 h1 {
   font-size: 3rem;
-  margin-bottom: 0;
+  color: #00ff66;
+  text-shadow: 0 0 12px #00ff66;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
-h2 {
-  color: #facc15;
+h2, h3 {
+  color: #ccffcc;
+  text-shadow: 0 0 8px #00ff66;
 }
 
 p, li {
@@ -43,27 +47,46 @@ button {
   width: 100%;
   margin: 15px 0;
   padding: 15px;
-  border: none;
-  border-radius: 12px;
-  background: #facc15;
-  color: #111827;
+  border: 1px solid #00ff66;
+  border-radius: 4px;
+  background: #001a00;
+  color: #00ff66;
+  font-family: "Courier New", monospace;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px #003300;
 }
 
 button:hover {
-  background: #fde68a;
+  background: #00ff66;
+  color: #000000;
+  box-shadow: 0 0 20px #00ff66;
 }
 
 #message {
   text-align: center;
-  color: #f87171;
+  color: #ff3333;
   font-weight: bold;
   margin-top: 20px;
+  text-shadow: 0 0 8px #ff0000;
 }
 
 .liberation {
-  border-color: #34d399;
-  background: #064e3b;
+  border-color: #ffffff;
+  background: rgba(0, 80, 30, 0.95);
+  box-shadow: 0 0 35px #ffffff;
+}
+
+body::before {
+  content: "010101  DEBT SYSTEM ACTIVE  110010  ACCESS RESTRICTED  001101";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: rgba(0, 255, 102, 0.18);
+  font-size: 2rem;
+  white-space: nowrap;
+  z-index: -1;
 }
