@@ -2,121 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Digital Liberation Room</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <main class="room">
 
-    <!-- PAGE 1 -->
-    <section id="page1" class="card active">
-      <h1>Digital Liberation Room</h1>
-      <p>Do you want to make it in America?</p>
-      <button onclick="showSection('intro')">Yes</button>
-      <button onclick="showSection('page1a')">No</button>
-    </section>
+  <canvas id="matrix-rain"></canvas>
 
-    <!-- PAGE 1A -->
-    <section id="page1a" class="card">
-      <h1>Digital Liberation Room</h1>
-      <p>Sorry, you <u><strong>must</strong></u> want to make it in America.</p>
-      <button onclick="showSection('intro')">OK</button>
-    </section>
+  <!-- PAGE 1 -->
+  <div class="page active" id="page-1">
+    <div class="terminal-box">
+      <h1 class="page-header">Digital Liberation Room</h1>
+      <p class="body-text">Do you want to make it in America?</p>
+      <div class="btn-group">
+        <button class="matrix-btn" onclick="goTo('page-2')">YES</button>
+        <button class="matrix-btn" onclick="goTo('page-1a')">NO</button>
+      </div>
+    </div>
+  </div>
 
-    <!-- PAGE 2 / INTRO -->
-    <section id="intro" class="card">
-      <h1>HEADER</h1>
+  <!-- PAGE 1A -->
+  <div class="page" id="page-1a">
+    <div class="terminal-box">
+      <h1 class="page-header">Digital Liberation Room</h1>
+      <p class="body-text">Sorry, you must want to make it in America.</p>
+      <div class="btn-group">
+        <button class="matrix-btn" onclick="goTo('page-2')">OK</button>
+      </div>
+    </div>
+  </div>
 
-      <img
-        src="images/graduation-caps.webp"
-        alt="PLACEHOLDER IMAGE"
-        class="hero-image"
-      />
-
-      <p>
-        Congratulations! You and your best friend, Lauren, just graduated college with a Bachelor in Fine Arts for sculpture.
-        You both were accepted to a selective summer internship in New York City at Dia: Beacon.
-      </p>
-
-      <p>PLACEHOLDER TEXT</p>
-
-      <button onclick="showSection('challenge1')">PLACEHOLDER BUTTON</button>
-    </section>
-
-    <!-- CHALLENGE 1 -->
-    <section id="challenge1" class="card">
-      <h2>HEADER</h2>
-
-      <img
-        src="images/graduation-photo-1.jpg"
-        alt="PLACEHOLDER IMAGE"
-        class="section-image"
-      />
-
-      <p>PLACEHOLDER TEXT</p>
-
-      <ul>
-        <li>PLACEHOLDER LIST ITEM</li>
-        <li>PLACEHOLDER LIST ITEM</li>
-        <li>PLACEHOLDER LIST ITEM</li>
-        <li>PLACEHOLDER LIST ITEM</li>
-      </ul>
-
-      <p><strong>QUESTION PLACEHOLDER</strong></p>
-
-      <button onclick="wrongAnswer()">PLACEHOLDER OPTION</button>
-      <button onclick="showSection('challenge2')">PLACEHOLDER OPTION</button>
-    </section>
-
-    <!-- CHALLENGE 2 -->
-    <section id="challenge2" class="card">
-      <h2>HEADER</h2>
-
-      <img
-        src="images/graduation-cartoon.jpg"
-        alt="PLACEHOLDER IMAGE"
-        class="section-image"
-      />
-
-      <p>PLACEHOLDER TEXT</p>
-
-      <p><strong>QUESTION PLACEHOLDER</strong></p>
-
-      <button onclick="wrongAnswer()">PLACEHOLDER OPTION</button>
-      <button onclick="showSection('challenge3')">PLACEHOLDER OPTION</button>
-    </section>
-
-    <!-- CHALLENGE 3 -->
-    <section id="challenge3" class="card">
-      <h2>HEADER</h2>
-
-      <img
-        src="images/graduation-photo-2.jpg"
-        alt="PLACEHOLDER IMAGE"
-        class="section-image"
-      />
-
-      <p>PLACEHOLDER TEXT</p>
-
-      <p><strong>QUESTION PLACEHOLDER</strong></p>
-
-      <button onclick="wrongAnswer()">PLACEHOLDER OPTION</button>
-      <button onclick="wrongAnswer()">PLACEHOLDER OPTION</button>
-      <button onclick="showSection('ending')">PLACEHOLDER OPTION</button>
-    </section>
-
-    <!-- ENDING -->
-    <section id="ending" class="card liberation">
-      <h2>HEADER</h2>
-      <p>PLACEHOLDER TEXT</p>
-      <p>PLACEHOLDER TEXT</p>
-      <h3>PLACEHOLDER TEXT</h3>
-    </section>
-
-    <p id="message"></p>
-
-  </main>
+  <!-- PAGE 2 (placeholder) -->
+  <div class="page" id="page-2">
+    <div class="terminal-box">
+      <h1 class="page-header">Header</h1>
+      <p class="body-text">Placeholder</p>
+      <div class="btn-group">
+        <button class="matrix-btn" onclick="goTo('page-1')">Placeholder</button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
