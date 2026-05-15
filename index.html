@@ -5,42 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Digital Liberation Room</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <canvas id="matrix-rain"></canvas>
 
   <!-- PAGE 1 -->
-  <div class="page active" id="page-1">
-    <div class="terminal-box">
-      <h1 class="page-header">Digital Liberation Room</h1>
-      <p class="body-text">Do you want to make it in America?</p>
+  <div class="page active collegiate-page" id="page-1">
+    <div class="collegiate-box">
+      <h1 class="collegiate-header">Do you want to make it in America?</h1>
       <div class="btn-group">
-        <button class="matrix-btn" onclick="goTo('page-2')">YES</button>
-        <button class="matrix-btn" onclick="goTo('page-1a')">NO</button>
+        <button class="collegiate-btn" onclick="goTo('page-2')">YES</button>
+        <button class="collegiate-btn" onclick="goTo('page-1a')">NO</button>
       </div>
     </div>
   </div>
 
   <!-- PAGE 1A -->
-  <div class="page" id="page-1a">
-    <div class="terminal-box">
-      <h1 class="page-header">Digital Liberation Room</h1>
-      <p class="body-text">Sorry, you must want to make it in America.</p>
+  <div class="page collegiate-page glitch-page" id="page-1a">
+    <div class="collegiate-box">
+      <h1 class="collegiate-header">Do you want to make it in America?</h1>
+      <p class="collegiate-body">Sorry, you <strong>must</strong> want to make it in America.</p>
       <div class="btn-group">
-        <button class="matrix-btn" onclick="goTo('page-2')">OK</button>
+        <button class="collegiate-btn" onclick="goTo('page-2')">OK</button>
       </div>
     </div>
   </div>
 
-  <!-- PAGE 2 (placeholder) -->
+  <!-- PAGE 2 -->
   <div class="page" id="page-2">
     <div class="terminal-box">
-      <h1 class="page-header">Header</h1>
-      <p class="body-text">Placeholder</p>
+      <h1 class="page-header">Digital Liberation Room</h1>
+      <p class="body-text">What happens when the blue and the red pill are the same?</p>
       <div class="btn-group">
-        <button class="matrix-btn" onclick="goTo('page-1')">Placeholder</button>
+        <button class="pill-btn" onclick="goTo('page-3')">Undergraduate Education</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page-3">
+    <div class="terminal-box scrollable">
+      <h1 class="page-header">Digital Liberation Room: Challenge 1</h1>
+      <p class="body-text">You have worked at the corner store since you were fourteen, saving money to go to college because you were taught your entire life that college was the only sure way to be successful, to have agency, independence, and freedom in America. You worked tirelessly for a near perfect GPA, exceptional SAT and ACT scores, and had a meaningful impact as a volunteer at the local food bank. You've made it into an incredible four-year university, but at the end of high school, you only have $2,000 to your name and the tuition is $60,000 per year. What do you do to make it in America?</p>
+      <div class="btn-group">
+        <button class="matrix-btn" onclick="goTo('page-4')">I'll do whatever it takes.</button>
+        <button class="matrix-btn" onclick="goTo('page-3a')">I can't afford that.</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 3A -->
+  <div class="page" id="page-3a">
+    <div class="terminal-box">
+      <h1 class="page-header">Digital Liberation Room: Challenge 1 — FAILED</h1>
+      <p class="body-text blue-text">You can NOT, make it in America.</p>
+      <div class="btn-group">
+        <button class="matrix-btn" onclick="goTo('page-3')">Back</button>
       </div>
     </div>
   </div>
