@@ -9,7 +9,23 @@
 <body>
   <main class="room">
 
-    <section id="intro" class="card active">
+    <!-- PAGE 1 -->
+    <section id="page1" class="card active">
+      <h1>Digital Liberation Room</h1>
+      <p>Do you want to make it in America?</p>
+      <button onclick="showSection('intro')">Yes</button>
+      <button onclick="showSection('page1a')">No</button>
+    </section>
+
+    <!-- PAGE 1A -->
+    <section id="page1a" class="card">
+      <h1>Digital Liberation Room</h1>
+      <p>Sorry, you <u><strong>must</strong></u> want to make it in America.</p>
+      <button onclick="showSection('intro')">OK</button>
+    </section>
+
+    <!-- PAGE 2 / INTRO -->
+    <section id="intro" class="card">
       <h1>HEADER</h1>
 
       <img
@@ -23,15 +39,12 @@
         You both were accepted to a selective summer internship in New York City at Dia: Beacon.
       </p>
 
-      <p>
-        PLACEHOLDER TEXT
-      </p>
+      <p>PLACEHOLDER TEXT</p>
 
-      <button onclick="showSection('challenge1')">
-        PLACEHOLDER BUTTON
-      </button>
+      <button onclick="showSection('challenge1')">PLACEHOLDER BUTTON</button>
     </section>
 
+    <!-- CHALLENGE 1 -->
     <section id="challenge1" class="card">
       <h2>HEADER</h2>
 
@@ -52,15 +65,11 @@
 
       <p><strong>QUESTION PLACEHOLDER</strong></p>
 
-      <button onclick="wrongAnswer()">
-        PLACEHOLDER OPTION
-      </button>
-
-      <button onclick="showSection('challenge2')">
-        PLACEHOLDER OPTION
-      </button>
+      <button onclick="wrongAnswer()">PLACEHOLDER OPTION</button>
+      <button onclick="showSection('challenge2')">PLACEHOLDER OPTION</button>
     </section>
 
+    <!-- CHALLENGE 2 -->
     <section id="challenge2" class="card">
       <h2>HEADER</h2>
 
@@ -74,15 +83,11 @@
 
       <p><strong>QUESTION PLACEHOLDER</strong></p>
 
-      <button onclick="wrongAnswer()">
-        PLACEHOLDER OPTION
-      </button>
-
-      <button onclick="showSection('challenge3')">
-        PLACEHOLDER OPTION
-      </button>
+      <button onclick="wrongAnswer()">PLACEHOLDER OPTION</button>
+      <button onclick="showSection('challenge3')">PLACEHOLDER OPTION</button>
     </section>
 
+    <!-- CHALLENGE 3 -->
     <section id="challenge3" class="card">
       <h2>HEADER</h2>
 
@@ -96,26 +101,16 @@
 
       <p><strong>QUESTION PLACEHOLDER</strong></p>
 
-      <button onclick="wrongAnswer()">
-        PLACEHOLDER OPTION
-      </button>
-
-      <button onclick="wrongAnswer()">
-        PLACEHOLDER OPTION
-      </button>
-
-      <button onclick="showSection('ending')">
-        PLACEHOLDER OPTION
-      </button>
+      <button onclick="wrongAnswer()">PLACEHOLDER OPTION</button>
+      <button onclick="wrongAnswer()">PLACEHOLDER OPTION</button>
+      <button onclick="showSection('ending')">PLACEHOLDER OPTION</button>
     </section>
 
+    <!-- ENDING -->
     <section id="ending" class="card liberation">
       <h2>HEADER</h2>
-
       <p>PLACEHOLDER TEXT</p>
-
       <p>PLACEHOLDER TEXT</p>
-
       <h3>PLACEHOLDER TEXT</h3>
     </section>
 
