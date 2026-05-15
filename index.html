@@ -187,9 +187,7 @@
 
     #page-5 { background: #000; overflow: hidden; }
 
-    #page-5.glitching {
-      animation: p5-glitch 0.07s infinite;
-    }
+    #page-5.glitching { animation: p5-glitch 0.07s infinite; }
 
     @keyframes p5-glitch {
       0%  { filter: hue-rotate(0deg)   brightness(1);   transform: translate(0,0)       skew(0deg); }
@@ -230,4 +228,160 @@
 <body>
 
   <canvas id="matrix-rain"></canvas>
-  <div class
+  <div class="site-footer">by Jocelyn Magsumbol</div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page-1">
+    <div class="page-content">
+      <div class="terminal-box">
+        <h1 class="page-header">Digital Liberation Room</h1>
+        <p class="body-text">Welcome to the Digital Liberation Room, U.S.A. You have been brought here today because it is your 18th birthday and you're about to head off to an expensive college, but someone sees a light within you that must not be extinguished. Right now, what you are witnessing is the system you were born into, connected by binaries, ones and zeros, trying to mold and control you, wrap you so tightly by the bureaucracy of the American educational system that you won't be able to move. But I am going to help you find your way out, step by step. Take the red pill, and after completing three successful challenges, one throughout each crucial phase of your life, you will become the narrator of your own story. Take the blue pill, and you will continue to be led, comfortably, but unconsciously, like a sheep, to the slaughter of your spirit.</p>
+        <div class="btn-group">
+          <button class="red-pill-btn" onclick="goTo('page-2')">Red Pill</button>
+          <button class="blue-pill-btn" onclick="goTo('page-1a')">Blue Pill</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 1A: BLUE PILL -->
+  <div class="page blue-sky-page" id="page-1a"></div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page-2">
+    <div class="page-content">
+      <div class="terminal-box">
+        <div class="header-group">
+          <h1 class="page-header">Digital Liberation Room: Cultural Competency</h1>
+          <h2 class="page-subheader">Challenge 1</h2>
+        </div>
+        <p class="body-text">You and your single mother are at an early dinner with your friend, Tessa, and Tessa's parents. Tessa's parents chose the restaurant and you can tell that every time they order something for the table, your mom shifts in her seat. "We are so proud of you girls, we just can't believe you're both graduating." Tessa's dad says, "Did Tessa tell you that we're going on safari this summer?" You shake your head no and your mother takes a sip of water. Tessa whispers to you, "Yeah, we're going to Cape Cod!" You are in disbelief. Tessa's dad asks you, "so where are heading for college in the fall?" You and your mom explain that until your FAFSA comes back, you're not sure you'll even be able to go. "What's FAFSA?" Tessa asks. Tessa's mother pinches her and tells her to shush. Take another red pill if you want to know what is real, take the blue pill if you want the architects of the system to keep you believing what they want you to believe.</p>
+        <div class="btn-group">
+          <button class="red-pill-btn" onclick="goTo('page-3')">I deserve opportunities in this world, just as much as Tessa does.</button>
+          <button class="blue-pill-btn" onclick="goTo('page-1a')">I shouldn't even try.</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page-3">
+    <div class="page-content">
+      <div class="terminal-box">
+        <div class="header-group">
+          <h1 class="page-header">Digital Liberation Room: Where Power Resides</h1>
+          <h2 class="page-subheader">Challenge 2</h2>
+        </div>
+        <p class="body-text">You got your FAFSA back, and it's bad. You go to the library to crunch the numbers. To cover your tuition, based on merit and need you were awarded $10k in scholarship funds, $10k in grants, $10k in work study, $20k in federal unsubsidized loans at 2% interest and $10k in federal subsidized loans at 2% interest. To cover your housing fees, $2k/month for ten months, if you took out a personal loan at 8% interest, you could maybe swing it. You realize who you'd be paying: Nelnet, Earnest, SoFi. "So, these are the people who are gatekeeping my education," you say to yourself. You look at the books all around you, the public service that's already sitting there, waiting to enrich your mind. You notice the bulletin board with workshops and certifications. Why does everyone's next step out of high school have to look the same? Take another red pill if you want to know what is real, take the blue pill if you want the architects of the system to keep you believing what they want you to believe.</p>
+        <div class="btn-group">
+          <button class="red-pill-btn" onclick="goTo('page-4')">I have time. I will utilize the resources I have and make my own, unique way.</button>
+          <button class="blue-pill-btn" onclick="goTo('page-1a')">I don't want to fall behind or feel ashamed. I will take the $60k financial aid package and just deal with the debt afterwards.</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page-4">
+    <div class="page-content">
+      <div class="terminal-box">
+        <div class="header-group">
+          <h1 class="page-header">Digital Liberation Room: Stand Up</h1>
+          <h2 class="page-subheader">Challenge 3</h2>
+        </div>
+        <p class="body-text">You took a gap year and worked full-time to save some money. You also found time to nurture your interests at the local library. You read books on political science, Marxism, California law. You went to your local community college for two years while you continued to work, then transferred to a UC to formally study political science. You graduated from law school, debt free, and plan on running for office, to make universal education a reality. Take another red pill if you want to know what is real, take the blue pill if you want the architects of the system to keep you believing what they want you to believe.</p>
+        <div class="btn-group">
+          <button class="red-pill-btn" onclick="goTo('page-5')">I can see what isn't working in this system, I can trust myself to find a way through, to depend on myself, to liberate myself, and I can help others to do the same.</button>
+          <button class="blue-pill-btn" onclick="goTo('page-5')">What red pill said.</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 5: GLITCH ENDING — empty box -->
+  <div class="page" id="page-5">
+    <div class="page-content">
+      <div class="terminal-box" id="p5-box"></div>
+    </div>
+    <div id="p5-blackout"></div>
+    <button class="matrix-btn" id="p5-restart" onclick="restartRoom()">Start Over</button>
+  </div>
+
+  <script>
+    // ── MATRIX RAIN ──────────────────────────────────────────
+    var canvas  = document.getElementById('matrix-rain');
+    var ctx     = canvas.getContext('2d');
+    var chars   = '01010110010001000001011010110101010001001011010100010101';
+    var fontSize = 15;
+
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    var cols  = Math.floor(canvas.width / fontSize);
+    var drops = [];
+    for (var x = 0; x < cols; x++) drops[x] = 1;
+
+    window.addEventListener('resize', function() {
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+      cols  = Math.floor(canvas.width / fontSize);
+      drops = [];
+      for (var x = 0; x < cols; x++) drops[x] = 1;
+    });
+
+    function drawRain() {
+      ctx.fillStyle = 'rgba(0,0,0,0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00FF41';
+      ctx.font = fontSize + 'px monospace';
+      for (var i = 0; i < cols; i++) {
+        var char = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+
+    setInterval(drawRain, 45);
+
+    // ── NAVIGATION ───────────────────────────────────────────
+    function goTo(pageId) {
+      var pages = document.querySelectorAll('.page');
+      for (var i = 0; i < pages.length; i++) {
+        pages[i].classList.remove('active');
+      }
+      document.getElementById(pageId).classList.add('active');
+      if (pageId === 'page-5') setTimeout(triggerPage5, 600);
+    }
+
+    // ── PAGE 5 GLITCH SEQUENCE ────────────────────────────────
+    function triggerPage5() {
+      var page5    = document.getElementById('page-5');
+      var blackout = document.getElementById('p5-blackout');
+      var restart  = document.getElementById('p5-restart');
+
+      page5.classList.add('glitching');
+
+      setTimeout(function() {
+        page5.classList.remove('glitching');
+        blackout.classList.add('active');
+      }, 2500);
+
+      setTimeout(function() {
+        restart.style.display = 'block';
+        setTimeout(function() { restart.classList.add('visible'); }, 50);
+      }, 3800);
+    }
+
+    // ── RESTART ───────────────────────────────────────────────
+    function restartRoom() {
+      document.getElementById('p5-blackout').classList.remove('active');
+      var restart = document.getElementById('p5-restart');
+      restart.classList.remove('visible');
+      restart.style.display = 'none';
+      document.getElementById('page-5').classList.remove('glitching');
+      goTo('page-1');
+    }
+  </script>
+</body>
+</html>
