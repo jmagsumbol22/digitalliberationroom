@@ -131,38 +131,59 @@ canvas#matrix-rain {
   color: #0d1b5e;
 }
 
-/* ── GLITCH EFFECT (Page 1A only) ── */
+/* ── MILD GLITCH (Page 1 — subtle) ── */
+.mild-glitch {
+  animation: mild-flicker 4s infinite;
+}
+
+@keyframes mild-flicker {
+  0%, 93%, 96%, 100% { opacity: 1; }
+  94%                 { opacity: 0.88; }
+}
+
+.mild-glitch .collegiate-box {
+  animation: mild-skew 4s infinite;
+}
+
+@keyframes mild-skew {
+  0%, 93%, 100% { transform: translate(0) skew(0deg); }
+  94%           { transform: translate(-3px, 1px) skew(0.6deg); }
+  95%           { transform: translate(3px, -1px) skew(-0.4deg); }
+  96%           { transform: translate(0) skew(0deg); }
+}
+
+/* ── FULL GLITCH (Page 1A — fast & intense) ── */
 .glitch-page {
-  animation: page-flicker 3.5s infinite;
+  animation: page-flicker 1.6s infinite;
 }
 
 @keyframes page-flicker {
-  0%, 87%, 91%, 95%, 100% { opacity: 1; }
-  88%, 93%                 { opacity: 0.7; }
+  0%, 75%, 80%, 85%, 100% { opacity: 1; }
+  76%, 83%                 { opacity: 0.6; }
 }
 
 .glitch-page .collegiate-box {
-  animation: glitch-skew 3.5s infinite;
+  animation: glitch-skew 1.6s infinite;
 }
 
 @keyframes glitch-skew {
-  0%, 87%, 100% { transform: translate(0) skew(0deg); }
-  88%           { transform: translate(-6px, 2px) skew(1.5deg); }
-  89%           { transform: translate(6px, -3px) skew(-1.2deg); }
-  90%           { transform: translate(-3px, 1px) skew(0.4deg); }
-  91%           { transform: translate(0) skew(0deg); }
+  0%, 75%, 100% { transform: translate(0) skew(0deg); }
+  76%           { transform: translate(-8px, 3px) skew(2deg); }
+  78%           { transform: translate(8px, -4px) skew(-1.5deg); }
+  80%           { transform: translate(-4px, 2px) skew(0.8deg); }
+  82%           { transform: translate(0) skew(0deg); }
 }
 
 .glitch-page .collegiate-header {
-  animation: glitch-colors 3.5s infinite;
+  animation: glitch-colors 1.6s infinite;
 }
 
 @keyframes glitch-colors {
-  0%, 87%, 92%, 100% { text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6); }
-  88%                { text-shadow: -5px 0 #ff0000, 5px 0 #0000ff; }
-  89%                { text-shadow: 5px 0 #00ffff, -5px 0 #ff0000; }
-  90%                { text-shadow: -2px 0 #ff00ff, 2px 0 #00ff00; }
-  91%                { text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6); }
+  0%, 75%, 84%, 100% { text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6); }
+  76%                { text-shadow: -6px 0 #ff0000, 6px 0 #0000ff; }
+  78%                { text-shadow: 6px 0 #00ffff, -6px 0 #ff0000; }
+  80%                { text-shadow: -3px 0 #ff00ff, 3px 0 #00ff00; }
+  82%                { text-shadow: 4px 0 #ffff00, -4px 0 #ff0000; }
 }
 
 /* ── MATRIX TERMINAL BOX ── */
@@ -235,7 +256,28 @@ canvas#matrix-rain {
   text-shadow: none;
 }
 
-/* ── PURPLE PILL BUTTON (Page 2) ── */
+/* ── RED PILL BUTTON (Page 2) ── */
+.red-pill-btn {
+  background: #7a0000;
+  border: 2px solid #dc2626;
+  color: #fecaca;
+  font-family: 'VT323', monospace;
+  font-size: 1.5rem;
+  padding: 14px 56px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  text-shadow: 0 0 8px #f87171;
+  box-shadow: 0 0 14px #dc2626, 0 0 30px #7a000066;
+  transition: all 0.2s ease;
+}
+
+.red-pill-btn:hover {
+  background: #b91c1c;
+  box-shadow: 0 0 24px #dc2626, 0 0 50px #dc262688;
+}
+
+/* ── PURPLE PILL BUTTON (unused, kept for reference) ── */
 .pill-btn {
   background: #4a0080;
   border: 2px solid #9333ea;
