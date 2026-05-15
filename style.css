@@ -9,6 +9,7 @@ body {
   font-family: 'VT323', monospace;
 }
 
+/* ── MATRIX RAIN CANVAS ── */
 canvas#matrix-rain {
   position: fixed;
   top: 0;
@@ -16,7 +17,7 @@ canvas#matrix-rain {
   width: 100%;
   height: 100%;
   z-index: 0;
-  opacity: 1;
+  opacity: 0.85;
 }
 
 /* ── FOOTER ── */
@@ -57,13 +58,17 @@ canvas#matrix-rain {
   padding: 60px 20px;
 }
 
-/* ── BLUE SKY PAGE (page-1a) ── */
+/* ── BLUE SKY PAGE (page-1a) — CSS only, no image ── */
 .blue-sky-page {
-  background-image: url('images/blue-sky.jpg');
-  background-size: cover;
-  background-position: center;
-  /* CSS gradient fallback */
-  background-color: #4fa3e0;
+  background: linear-gradient(
+    180deg,
+    #1565C0 0%,
+    #1E88E5 15%,
+    #42A5F5 35%,
+    #90CAF9 60%,
+    #E3F2FD 82%,
+    #ffffff 100%
+  );
 }
 
 /* ── MATRIX TERMINAL BOX ── */
@@ -81,7 +86,7 @@ canvas#matrix-rain {
   text-align: center;
 }
 
-/* ── TWO-LINE HEADER ── */
+/* ── TWO-LINE HEADERS ── */
 .header-group {
   margin-bottom: 28px;
   padding-bottom: 18px;
@@ -89,7 +94,7 @@ canvas#matrix-rain {
 }
 
 .header-group .page-header {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   padding-bottom: 0;
   border-bottom: none;
 }
@@ -105,7 +110,7 @@ canvas#matrix-rain {
 
 .page-header {
   color: #ADFF2F;
-  font-size: clamp(1.2rem, 2.5vw, 2.4rem);
+  font-size: clamp(1.2rem, 2.5vw, 2.2rem);
   letter-spacing: 3px;
   text-transform: uppercase;
   text-shadow: 0 0 6px #ADFF2F55;
@@ -122,11 +127,6 @@ canvas#matrix-rain {
   text-shadow: 0 0 6px #00FF4188;
 }
 
-.blue-text {
-  color: #00cfff !important;
-  text-shadow: 0 0 10px #00cfff !important;
-}
-
 .btn-group {
   display: flex;
   gap: 24px;
@@ -134,6 +134,7 @@ canvas#matrix-rain {
   flex-wrap: wrap;
 }
 
+/* ── STANDARD MATRIX BUTTON ── */
 .matrix-btn {
   background: transparent;
   border: 2px solid #ADFF2F;
@@ -204,7 +205,7 @@ canvas#matrix-rain {
   box-shadow: 0 0 24px #3b82f6, 0 0 50px #3b82f688;
 }
 
-/* ── PAGE 5: GLITCH ENDING ── */
+/* ── PAGE 5 GLITCH ENDING ── */
 #page-5 {
   background: #000;
   overflow: hidden;
@@ -252,6 +253,5 @@ canvas#matrix-rain {
 }
 
 #p5-restart.visible {
-  display: block;
   opacity: 1;
 }
