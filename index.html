@@ -4,94 +4,230 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Digital Liberation Room</title>
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #000;
+      font-family: 'VT323', monospace;
+    }
+
+    canvas#matrix-rain {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+    }
+
+    .site-footer {
+      position: fixed;
+      bottom: 14px; right: 20px;
+      z-index: 200;
+      color: rgba(173,255,47,0.5);
+      font-size: 1rem;
+      letter-spacing: 2px;
+      pointer-events: none;
+    }
+
+    .page {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      overflow-y: auto;
+      z-index: 10;
+    }
+
+    .page.active { display: block; }
+
+    .page-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100%;
+      padding: 60px 20px;
+    }
+
+    .blue-sky-page {
+      background: linear-gradient(180deg,
+        #1565C0 0%, #1E88E5 15%, #42A5F5 35%,
+        #90CAF9 60%, #E3F2FD 82%, #fff 100%);
+    }
+
+    .terminal-box {
+      background-color: #000;
+      border: 2px solid #ADFF2F;
+      box-shadow:
+        0 0 12px #ADFF2F,
+        0 0 30px #ADFF2F66,
+        0 0 60px #ADFF2F22,
+        inset 0 0 12px #ADFF2F11;
+      padding: 50px 60px;
+      max-width: 720px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .header-group {
+      margin-bottom: 28px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #ADFF2F44;
+    }
+
+    .header-group .page-header {
+      margin-bottom: 8px;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .page-header {
+      color: #ADFF2F;
+      font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-shadow: 0 0 6px #ADFF2F55;
+      margin-bottom: 28px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #ADFF2F44;
+    }
+
+    .page-subheader {
+      color: #ADFF2F;
+      font-size: clamp(1rem, 2vw, 1.6rem);
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      text-shadow: 0 0 6px #ADFF2F55;
+      font-weight: normal;
+    }
+
+    .body-text {
+      color: #00FF41;
+      font-size: 1.4rem;
+      line-height: 1.75;
+      margin-bottom: 40px;
+      text-shadow: 0 0 6px #00FF4188;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .matrix-btn {
+      background: transparent;
+      border: 2px solid #ADFF2F;
+      color: #ADFF2F;
+      font-family: 'VT323', monospace;
+      font-size: 1.4rem;
+      padding: 10px 30px;
+      cursor: pointer;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 0 8px #ADFF2F;
+      box-shadow: 0 0 8px #ADFF2F44;
+      transition: all 0.2s ease;
+      white-space: normal;
+      max-width: 320px;
+    }
+
+    .matrix-btn:hover {
+      background-color: #ADFF2F;
+      color: #000;
+      box-shadow: 0 0 18px #ADFF2F, 0 0 40px #ADFF2F88;
+      text-shadow: none;
+    }
+
+    .red-pill-btn {
+      background: #7a0000;
+      border: 2px solid #dc2626;
+      color: #fecaca;
+      font-family: 'VT323', monospace;
+      font-size: 1.3rem;
+      padding: 14px 36px;
+      cursor: pointer;
+      letter-spacing: 2px;
+      border-radius: 50px;
+      text-shadow: 0 0 8px #f87171;
+      box-shadow: 0 0 14px #dc2626, 0 0 30px #7a000066;
+      transition: all 0.2s ease;
+      white-space: normal;
+      max-width: 300px;
+    }
+
+    .red-pill-btn:hover {
+      background: #b91c1c;
+      box-shadow: 0 0 24px #dc2626, 0 0 50px #dc262688;
+    }
+
+    .blue-pill-btn {
+      background: #001a6e;
+      border: 2px solid #3b82f6;
+      color: #bfdbfe;
+      font-family: 'VT323', monospace;
+      font-size: 1.3rem;
+      padding: 14px 36px;
+      cursor: pointer;
+      letter-spacing: 2px;
+      border-radius: 50px;
+      text-shadow: 0 0 8px #93c5fd;
+      box-shadow: 0 0 14px #3b82f6, 0 0 30px #1d4ed866;
+      transition: all 0.2s ease;
+      white-space: normal;
+      max-width: 300px;
+    }
+
+    .blue-pill-btn:hover {
+      background: #1d4ed8;
+      box-shadow: 0 0 24px #3b82f6, 0 0 50px #3b82f688;
+    }
+
+    #page-5 { background: #000; overflow: hidden; }
+
+    #page-5.glitching {
+      animation: p5-glitch 0.07s infinite;
+    }
+
+    @keyframes p5-glitch {
+      0%  { filter: hue-rotate(0deg)   brightness(1);   transform: translate(0,0)       skew(0deg); }
+      12% { filter: hue-rotate(90deg)  brightness(2.5); transform: translate(-10px,5px)  skew(2.5deg); }
+      24% { filter: hue-rotate(180deg) brightness(1);   transform: translate(10px,-5px)  skew(-2deg); }
+      36% { filter: hue-rotate(270deg) brightness(3.5); transform: translate(-6px,4px)   skew(1.5deg); }
+      48% { filter: hue-rotate(180deg) brightness(1);   transform: translate(6px,-4px)   skew(-1.5deg); }
+      60% { filter: hue-rotate(90deg)  brightness(2);   transform: translate(-12px,6px)  skew(3deg); }
+      72% { filter: hue-rotate(45deg)  brightness(1);   transform: translate(12px,-6px)  skew(-3deg); }
+      84% { filter: hue-rotate(270deg) brightness(4);   transform: translate(-4px,3px)   skew(2deg); }
+      100%{ filter: hue-rotate(0deg)   brightness(1);   transform: translate(0,0)        skew(0deg); }
+    }
+
+    #p5-blackout {
+      position: fixed; inset: 0;
+      background: #000;
+      opacity: 0;
+      z-index: 50;
+      pointer-events: none;
+      transition: opacity 0.4s ease-in;
+    }
+
+    #p5-blackout.active { opacity: 1; }
+
+    #p5-restart {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 100;
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease-in;
+    }
+
+    #p5-restart.visible { opacity: 1; }
+  </style>
 </head>
 <body>
 
   <canvas id="matrix-rain"></canvas>
-  <div class="site-footer">by Jocelyn Magsumbol</div>
-
-  <!-- PAGE 1 -->
-  <div class="page active" id="page-1">
-    <div class="page-content">
-      <div class="terminal-box">
-        <h1 class="page-header">Digital Liberation Room</h1>
-        <p class="body-text">Welcome to the Digital Liberation Room, U.S.A. You have been brought here because it is your 18th birthday and you're about to head off to an expensive college, but someone sees a light within you that must not be extinguished. Right now, what you are witnessing is the system you were born into, connected by binaries, ones and zeros, trying to mold and control you, wrap you so tightly by the bureaucracy of the American educational system that you won't be able to move. But I am going to help you find your way out. Take the red pill, and after completing three successful simulations, you will be the narrator of your own story. Take the blue pill, and you will continue to be led, comfortably, but unconsciously, like a sheep, to the slaughter of your spirit.</p>
-        <div class="btn-group">
-          <button class="red-pill-btn" onclick="goTo('page-2')">Red Pill</button>
-          <button class="blue-pill-btn" onclick="goTo('page-1a')">Blue Pill</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PAGE 1A: BLUE PILL — blue sky, no content -->
-  <div class="page blue-sky-page" id="page-1a"></div>
-
-  <!-- PAGE 2 -->
-  <div class="page" id="page-2">
-    <div class="page-content">
-      <div class="terminal-box">
-        <div class="header-group">
-          <h1 class="page-header">Digital Liberation Room: Cultural Competency</h1>
-          <h2 class="page-subheader">Challenge 1</h2>
-        </div>
-        <p class="body-text">You and your single mother are at an early dinner with your friend, Tessa, and Tessa's parents. Tessa's parents chose the restaurant and you can tell that every time they order something for the table, your mom shifts in her seat. "We are so proud of you girls, we just can't believe you're both graduating." Tessa's dad says, "Did Tessa tell you that we're going on safari this summer?" You shake your head no and your mother takes a sip of water. Tessa whispers to you, "Yeah, we're going to Cape Cod!" You are in disbelief. Tessa's dad asks you, "so where are you heading for college in the fall?" You and your mom explain that until your FAFSA comes back, you're not sure you'll even be able to go. "What's FAFSA?" Tessa asks. Tessa's mother pinches her and tells her to shush. Take another red pill if you want to know what is real, take the blue pill if you want the architects of the system to keep you believing what they want you to believe.</p>
-        <div class="btn-group">
-          <button class="red-pill-btn" onclick="goTo('page-3')">I deserve opportunities in this world, just as much as Tessa does.</button>
-          <button class="blue-pill-btn" onclick="goTo('page-1a')">I shouldn't even try.</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PAGE 3 -->
-  <div class="page" id="page-3">
-    <div class="page-content">
-      <div class="terminal-box">
-        <div class="header-group">
-          <h1 class="page-header">Digital Liberation Room: Where Power Resides</h1>
-          <h2 class="page-subheader">Challenge 2</h2>
-        </div>
-        <p class="body-text">You got your FAFSA back, and it's bad. You go to the library to crunch the numbers. To cover your tuition, based on merit and need you were awarded $10k in scholarship funds, $10k in grants, $10k in work study, $20k in federal unsubsidized loans at 2% interest and $10k in federal subsidized loans at 2% interest. To cover your housing fees, $2k/month for ten months, if you took out a personal loan at 8% interest, you could maybe swing it. You look at the books all around you, the public service that's already sitting there, waiting for you to enrich your mind, the bulletin board with workshops and certifications. Why does everyone's next step out of high school have to look the same? Take another red pill if you want to know what is real, take the blue pill if you want the architects of the system to keep you believing what they want you to believe.</p>
-        <div class="btn-group">
-          <button class="red-pill-btn" onclick="goTo('page-4')">I have time. I will utilize the resources I have and make my own, unique way.</button>
-          <button class="blue-pill-btn" onclick="goTo('page-1a')">I don't want to fall behind or feel ashamed. I will take the $60k financial aid package and just deal with the debt afterwards.</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PAGE 4 -->
-  <div class="page" id="page-4">
-    <div class="page-content">
-      <div class="terminal-box">
-        <div class="header-group">
-          <h1 class="page-header">Digital Liberation Room: Stand Up</h1>
-          <h2 class="page-subheader">Challenge 3</h2>
-        </div>
-        <p class="body-text">You took a gap year and worked full-time to save some money. You also found time to nurture your interests at the local library. You read books on political science, Marxism, California law. You went to your local community college for two years while you continued to work, then transferred to a UC to formally study political science. You graduated from law school, debt free, and… take another red pill if you want to know what is real, take the blue pill if you want the architects of the system to keep you believing what they want you to believe.</p>
-        <div class="btn-group">
-          <button class="red-pill-btn" onclick="goTo('page-5')">I can see what isn't working, I can trust myself, depend on myself, and I can help others to do the same.</button>
-          <button class="blue-pill-btn" onclick="goTo('page-5')">What red pill said.</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PAGE 5: GLITCH ENDING -->
-  <div class="page" id="page-5">
-    <div class="page-content">
-      <div class="terminal-box" id="p5-box">
-        <h1 class="page-header">placeholder</h1>
-        <p class="body-text">placeholder</p>
-      </div>
-    </div>
-    <div id="p5-blackout"></div>
-    <button class="matrix-btn" id="p5-restart" onclick="restartRoom()">Start Over</button>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  <div class
