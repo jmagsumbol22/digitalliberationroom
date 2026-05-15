@@ -24,6 +24,27 @@ body {
   display: block;
 }
 
+/* NEW INTRO BACKGROUND */
+
+#intro {
+  background-image:
+    linear-gradient(rgba(17, 24, 39, 0.75),
+    rgba(17, 24, 39, 0.75)),
+    url("images/graduation-caps.webp");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* END NEW INTRO BACKGROUND */
+
 h1 {
   font-size: 3rem;
   margin-bottom: 10px;
@@ -41,14 +62,6 @@ p,
 li {
   font-size: 1.1rem;
   line-height: 1.6;
-}
-
-.hero-image {
-  width: 100%;
-  max-height: 320px;
-  object-fit: cover;
-  border-radius: 14px;
-  margin: 20px 0;
 }
 
 .section-image {
