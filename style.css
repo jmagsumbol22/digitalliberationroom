@@ -60,8 +60,7 @@ canvas#matrix-rain {
   letter-spacing: 5px;
   text-transform: uppercase;
   text-shadow:
-    0 0 8px #ADFF2F,
-    0 0 20px #ADFF2F88;
+    text-shadow: 0 0 6px #ADFF2F55;
   margin-bottom: 28px;
   padding-bottom: 18px;
   border-bottom: 1px solid #ADFF2F44;
